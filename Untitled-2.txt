@@ -1,0 +1,35 @@
+f = open("births.csv", "r") text = f.read() split_texts = text.split("\n") days_counts = {} birth = []
+
+for line in split_texts: birth.append(line.split(",")) for day in birth[1:len(birth)]: if day[3] in days_counts: days_counts[day[3]] = days_counts[day[3]] + int(day[4]) else: days_counts[day[3]] = int(day[4])
+
+days_counts {'1': 34734996, '2': 38677176, '3': 37937130, '4': 37730574, '5': 37401942, '6': 27372666, '7': 24478338}
+
+
+f = open("births.csv", 'r')
+text = f.read()
+text
+
+
+f = open("births.csv", 'r')
+text = f.read()
+split_texts = text.split("\n")
+print(split_texts)
+
+
+f = open("births.csv", 'r')
+text = f.read()
+
+split_texts = text.split("\n")
+print(split_texts)
+
+days_counts = {} 
+birth = []
+
+for line in split_texts:
+    birth.append(line.split(","))
+    
+for day in birth[1:len(birth)]:
+    if day[3] in days_counts: 
+        days_counts[day[3]] = days_counts[day[3]] + int(day[4])
+    else:
+        days_counts[day[3]] = int(day[4])
